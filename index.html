@@ -56,17 +56,12 @@
                <blockquote>Convert Leaflet CircleMarker Object to SVG (Path)</blockquote>
                <a href="https://stackoverflow.com/questions/75376010/convert-leaflet-circlemarker-object-to-svg-path">Link to question</a>
                     <pre>
-                        <svg viewBox="0 0 100 100">
-                            <text>
-                              <tspan class="line-1" textLength="100" x="0" y="1em" font-size="20">
-                                The Cat
-                              </tspan>
-                              <tspan class="line-2" textLength="100" x="0" dy="0.9em" font-size="20" lengthAdjust="spacingAndGlyphs">
-                                in the
-                              </tspan>
-                              <tspan class="line-3" textLength="100" x="0" dy="0.9em" font-size="35">
-                                Hat
-                              </tspan>
+                        <svg viewBox="0 0 500 500">
+                            <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+                            <text width="500">
+                              <textPath alignment-baseline="top" xlink:href="#curve">
+                                Dangerous Curves Ahead
+                              </textPath>
                             </text>
                           </svg>
                     </pre>
