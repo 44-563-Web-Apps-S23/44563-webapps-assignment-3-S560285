@@ -56,27 +56,20 @@
                <blockquote>Convert Leaflet CircleMarker Object to SVG (Path)</blockquote>
                <a href="https://stackoverflow.com/questions/75376010/convert-leaflet-circlemarker-object-to-svg-path">Link to question</a>
             <pre>
-                <svg>
-                    /// Mixin to manage responsive breakpoints
-                    /// @author Kitty Giraudel
-                    /// @param {String} $breakpoint - Breakpoint name
-                    /// @require $breakpoints
-                    @mixin respond-to($breakpoint) {
-                      // If the key exists in the map
-                      @if map-has-key($breakpoints, $breakpoint) {
-                        // Prints a media query based on the value
-                        @media (min-width: map-get($breakpoints, $breakpoint)) {
-                          @content;
-                        }
-                      }
-                     
-                      // If the key doesn't exist in the map
-                      @else {
-                        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-                            + "Available breakpoints are: #{map-keys($breakpoints)}.";
-                      }
-                    }
-                  </svg>
+                /* The main SVG */
+                .button-icons {
+                  width: 1.25em;
+                }
+                
+                /* The individual icons */
+                .icon {
+                  fill: #fff;
+                }
+                
+                /* We hide the checkmark by default */
+                #checkmark {
+                  visibility: hidden;
+                }
             </pre>
         </body>
     </head>
