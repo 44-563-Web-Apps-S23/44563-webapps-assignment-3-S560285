@@ -57,12 +57,25 @@
                <a href="https://stackoverflow.com/questions/75376010/convert-leaflet-circlemarker-object-to-svg-path">Link to question</a>
             <pre>
                 <svg>
-                    <g> 
-                      <path class="leaflet-interactive" stroke="#f9e231" stroke-opacity="1" stroke-
-                      width="3" stroke-linecap="round" stroke-linejoin="round" fill="#f7ba00" fill-opacity="1"  
-                      fill-rule="evenodd" d="M621,139a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0 ">
-                      </path>
-                    </g>
+                    /// Mixin to manage responsive breakpoints
+                    /// @author Kitty Giraudel
+                    /// @param {String} $breakpoint - Breakpoint name
+                    /// @require $breakpoints
+                    @mixin respond-to($breakpoint) {
+                      // If the key exists in the map
+                      @if map-has-key($breakpoints, $breakpoint) {
+                        // Prints a media query based on the value
+                        @media (min-width: map-get($breakpoints, $breakpoint)) {
+                          @content;
+                        }
+                      }
+                     
+                      // If the key doesn't exist in the map
+                      @else {
+                        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+                            + "Available breakpoints are: #{map-keys($breakpoints)}.";
+                      }
+                    }
                   </svg>
             </pre>
         </body>
